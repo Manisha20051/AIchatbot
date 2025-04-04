@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charity Impact Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            background: #28a745;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Charity Impact Tracker</h2>
+        <p>Total Donations: $<span id="donationAmount">0</span></p>
+        <button onclick="addDonation(10)">$10</button>
+        <button onclick="addDonation(50)">$50</button>
+        <button onclick="addDonation(100)">$100</button>
+        <h3>Impact Analysis</h3>
+        <p id="impactMessage">Your donations will create a positive impact!</p>
+    </div>
+
+    <script>
+        let totalDonations = 0;
+
+        function addDonation(amount) {
+            totalDonations += amount;
+            document.getElementById('donationAmount').textContent = totalDonations;
+            updateImpact();
+        }
+
+        function updateImpact() {
+            let message = "";
+            if (totalDonations < 50) {
+                message = "Your donation helps provide basic needs!";
+            } else if (totalDonations < 200) {
+                message = "You're contributing to education and healthcare!";
+            } else {
+                message = "Your generous donation is changing lives on a large scale!";
+            }
+            document.getElementById('impactMessage').textContent = message;
+        }
+    </script>
+</body>
+</html>
