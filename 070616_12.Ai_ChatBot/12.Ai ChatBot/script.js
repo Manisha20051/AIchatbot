@@ -5,7 +5,7 @@ let imagebtn = document.querySelector("#image");
 let image = document.querySelector("#image img");
 let imageinput = document.querySelector("#image input");
 
-const Api_Key = "AIzaSyCaCbI27JOYCtI-LtBAQvghjJBRHbWkegk"; // Replace with your key
+const Api_Key = "AIzaSyAnQJx9Tyiq-ZAqhFV2O1eqnisvL18ITas"; // Replace with your key
 const Api_Url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${Api_Key}`;
 // ------------------------
 
